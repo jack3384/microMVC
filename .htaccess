@@ -1,0 +1,10 @@
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# 捕获_GET数据为 名为%1变量
+RewriteCond %{QUERY_STRING} ^(.*)$
+# otherwise forward it to index.php
+RewriteRule ^([0-9a-zA-Z]{1,}/[0-9a-zA-Z]{0,})/{0,1}(.{0,})$ index.php?route=$1&argu=$2&%1

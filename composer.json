@@ -1,0 +1,12 @@
+{
+    "require": {
+        "slim/pdo": "~1.9"
+    },
+    "autoload": {
+                "psr-4": {
+                    "jikai\\Components\\": "Components/src",
+					"jikai\\microMVC\\": "microMVC/src",
+					"jikai\\": "./"
+                         }
+    }
+}
