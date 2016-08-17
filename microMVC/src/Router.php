@@ -110,6 +110,7 @@ class Router
 
         $outInfo=call_user_func_array(array($controller, $this->action), $this->argu);
         if(is_string($outInfo)){
+            header('Content-Type: text/html; charset=UTF-8');
             echo $outInfo;
         }elseif(is_array($outInfo)){
             header('Content-type: application/json');
